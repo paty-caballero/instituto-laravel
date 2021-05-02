@@ -29,6 +29,7 @@
           
           </div>
         </div>
+        
         <div>
           <label>Seleccione la Categoria</label>
           <div>
@@ -42,8 +43,9 @@
         </div>
 
           <div>
+            <button type="submit" >Guardar</button>
             <button type="reset" >Borrar</button>
-            <button type="submit" >Agregar</button>
+            
           </div>
           
       </fieldset>

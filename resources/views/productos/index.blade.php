@@ -4,6 +4,7 @@
             <tr>
               <th>Id</th>
               <th>Nombre</th>
+              <th>Precio</th>
               <th>Marca</th>
               <th>Categoria</th>
               <th>Acciones</th>
@@ -14,11 +15,20 @@
             @foreach($datos as $producto)
             <tr>
               <td>{{ $producto->id }}</td>
-              <td>{{ $producto->nombre }}</td>
-              <td>{{ $producto->marca_id }}</td>
-              <td>{{ $producto->categoria_id}}</td>
-              <td><a href="{{ route('index', $producto->id) }}" class="btn btn-warning">Modificar</a></td>
+              <td>{{ $producto->producto }}</td>
+             <td>{{ $producto-> precio }}</td>
+             <td>{{ $producto-> marca }}</td>
+             <td>{{ $producto-> categoria }}</td>
+             <td><a href="{{ route('productos.edit', ['producto' => $producto->id]) }}">Modificar</a> </td>
+             <td>
+                <form  action="{{ route('productos.destroy', $producto->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit">Eliminar</button>
+                </form>
+             </td>
 
+  
             </tr>
             @endforeach
 
